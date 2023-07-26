@@ -48,10 +48,29 @@ return {
 			vim.keymap.set('n', '<leader>a', mark.add_file, { desc = "Harpoon file" })
 			vim.keymap.set('n', '<C-e>', ui.toggle_quick_menu, { desc = "Harpoon toggle quick menu" })
 
-			-- vim.keymap.set('n', '<C-h>', function() ui.nav_file(1) end, { desc = "Jump to Harpoon file 1" })
-			-- vim.keymap.set('n', '<C-t>', function() ui.nav_file(2) end, { desc = "Jump to Harpoon file 2" })
-			-- vim.keymap.set('n', '<C-n>', function() ui.nav_file(3) end, { desc = "Jump to Harpoon file 3" })
-			-- vim.keymap.set('n', '<C-s>', function() ui.nav_file(4) end, { desc = "Jump to Harpoon file 4" })
+			vim.keymap.set('n', '<C-b>', function() ui.nav_file(1) end, { desc = "Jump to Harpoon file 1" })
+			vim.keymap.set('n', '<C-y>', function() ui.nav_file(2) end, { desc = "Jump to Harpoon file 2" })
+			vim.keymap.set('n', '<C-n>', function() ui.nav_file(3) end, { desc = "Jump to Harpoon file 3" })
+			vim.keymap.set('n', '<C-m>', function() ui.nav_file(4) end, { desc = "Jump to Harpoon file 4" })
 		end
+	},
+	"nvim-treesitter/nvim-treesitter-context",
+	{
+		"folke/trouble.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		},
+		config = function()
+			vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
+				{ silent = true, noremap = true }
+			)
+
+			vim.keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>",
+				{ silent = true, noremap = true }
+			)
+		end,
 	},
 }
