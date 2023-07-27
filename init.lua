@@ -379,7 +379,7 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
 
-  nmap('K', vim.lsp.buf.rename, 'Hover informations')
+  nmap('K', vim.lsp.buf.hover, 'Hover informations')
   nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
   nmap('gs', vim.lsp.buf.signature_help, 'Signature help')
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
