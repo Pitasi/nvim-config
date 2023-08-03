@@ -3,7 +3,7 @@ return {
 	dependencies = { "MunifTanjim/nui.nvim" },
 	init = function() vim.g.neo_tree_remove_legacy_commands = true end,
 	config = function()
-		vim.keymap.set('n', '<leader>m', '<cmd>Neotree toggle reveal=true<cr>',
+		vim.keymap.set('n', '<leader>m', '<cmd>Neotree toggle position=float reveal=true<cr>',
 			{ desc = 'Toggle file [M]enu', silent = true })
 	end,
 	opts = function()
