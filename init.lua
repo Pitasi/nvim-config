@@ -286,6 +286,8 @@ vim.opt.wrap = false
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
+vim.keymap.set('n', '<c-s>', '<cmd>w<cr>', { silent = true, noremap = true, desc = 'Save current buffer' })
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
