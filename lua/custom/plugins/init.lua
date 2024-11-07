@@ -14,7 +14,6 @@ return {
 		end
 	},
 	'mbbill/undotree',
-	'christoomey/vim-tmux-navigator',
 	{
 		'jose-elias-alvarez/null-ls.nvim',
 		config = function()
