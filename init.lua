@@ -446,12 +446,11 @@ cmp.setup({
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-Space>'] = cmp.mapping.complete {},
     ['<C-f>'] = cmp.mapping(function(fallback)
-      print('cmp.visible(): ' .. tostring(cmp.visible()))
-      if cmp.visible() then
+      if cmp.get_active_entry() then
         cmp.confirm({
           -- behavior = cmp.ConfirmBehavior.Replace,
           behavior = cmp.ConfirmBehavior.Insert,
-          select = true,
+          select = false,
         })
       else
         fallback()

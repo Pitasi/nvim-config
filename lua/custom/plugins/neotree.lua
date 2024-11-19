@@ -5,6 +5,8 @@ return {
 	config = function()
 		vim.keymap.set('n', '<leader>m', '<cmd>Neotree toggle position=float reveal=true<cr>',
 			{ desc = 'Toggle file [M]enu', silent = true })
+		vim.keymap.set('n', '<leader>M', '<cmd>Neotree toggle position=left reveal=true<cr>',
+			{ desc = 'Toggle file [M]enu sidebar', silent = true })
 	end,
 	opts = function()
 		return {
