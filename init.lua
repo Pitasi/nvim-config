@@ -444,8 +444,19 @@ cmp.setup({
     ['<C-n>'] = cmp.mapping.select_next_item(),
     ['<C-p>'] = cmp.mapping.select_prev_item(),
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete {},
+    ['<C-f>'] = cmp.mapping(function(fallback)
+      print('cmp.visible(): ' .. tostring(cmp.visible()))
+      if cmp.visible() then
+        cmp.confirm({
+          -- behavior = cmp.ConfirmBehavior.Replace,
+          behavior = cmp.ConfirmBehavior.Insert,
+          select = true,
+        })
+      else
+        fallback()
+      end
+    end, { 'i' }),
     ['<CR>'] = cmp.mapping.confirm {
       -- behavior = cmp.ConfirmBehavior.Replace,
       behavior = cmp.ConfirmBehavior.Insert,
