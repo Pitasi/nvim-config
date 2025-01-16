@@ -1,14 +1,14 @@
 return {
-	{
-      "supermaven-inc/supermaven-nvim",
-      config = function()
-        require("supermaven-nvim").setup({
-	  keymaps = {
-	    accept_suggestion = "<C-f>",
-	  },
-        })
-      end,
-    },
+	-- {
+	--      "supermaven-inc/supermaven-nvim",
+	--      config = function()
+	--        require("supermaven-nvim").setup({
+	--   keymaps = {
+	--     accept_suggestion = "<C-f>",
+	--   },
+	--        })
+	--      end,
+	--    },
 	-- {
 	-- 	"github/copilot.vim",
 	-- 	cmd = "Copilot",
