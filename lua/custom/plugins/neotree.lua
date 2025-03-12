@@ -117,9 +117,10 @@ return {
 			},
 			filesystem = {
 				follow_current_file = true,
-				hijack_netrw_behavior = "open_current",
-				use_libuv_file_watcher = true,
+				leave_dirs_open = true,
 			},
+			hijack_netrw_behavior = "open_current",
+			use_libuv_file_watcher = true,
 			event_handlers = {
 				{
 					event = "neo_tree_buffer_enter",
